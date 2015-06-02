@@ -10,6 +10,7 @@
 
 define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
+define('HANDLERS_DIR', __DIR__ . '/Handlers');
 
 /*
  * Автозагрузчик
@@ -18,6 +19,7 @@ require CORE_DIR . '/Loader.php';
 $loader = new \Armature\Core\Loader;
 $loader->register();
 $loader->addNamespace('Armature\Core', CORE_DIR);
+$loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
 
 $request = new Armature\Core\Request();
 $app = new Armature\Core\App($request);

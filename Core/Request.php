@@ -14,6 +14,11 @@ namespace Armature\Core;
 class Request {
 
 	/*
+	 * Переменные окружения
+	 */
+	public $env = array();
+
+	/*
 	 * Аякс запрос
 	 */
 	public $ajax = false;
@@ -24,9 +29,58 @@ class Request {
 	public $method;
 
 
-	public function __construct()
+	/*
+	 * Конструктор класса
+	 */
+	public function __construct($env)
 	{
-		echo 'refrf';
+		$this->setEnv($env);
+		$this->setMethod($this->env['REQUEST_METHOD']);
+		$this->checkAjax();
+	}
+
+	/*
+	 * Получение метода запроса
+	 */
+	public function getMethod()
+	{
+		return $this->method;
+	}
+
+	/*
+	 * Установка метода запроса
+	 */
+	public function setMethod($method)
+	{
+		$this->method = $method;
+	}
+
+	/*
+	 * Установка окружения
+	 */
+	public function setEnv($env)
+	{
+		$this->env = $env;
+	}
+
+	/*
+	 * Получение окружения
+	 */
+	public function getEnv()
+	{
+		return $this->env;
+	}
+
+	/*
+	 * Проверка на аякс запрос
+	 */
+	public function checkAjax()
+	{
+		if(isset($this->env['HTTP_X_REQUESTED_WITH']) && strtolower($this->env['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
+		{
+			$this->ajax = true;
+		}
+		return $this->ajax;
 	}
 
 }

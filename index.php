@@ -21,7 +21,7 @@ $loader->register();
 $loader->addNamespace('Armature\Core', CORE_DIR);
 $loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
 
-$request = new Armature\Core\Request($_SERVER);
+$request = new Armature\Core\Request();
 $response = new Armature\Core\Response();
 $app = new Armature\Core\App();
 

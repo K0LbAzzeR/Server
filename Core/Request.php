@@ -18,7 +18,7 @@ class Request {
 	public $env = array();
 
 	/*
-	 * Аякс запрос
+	 * Маркер Ajax
 	 */
 	public $ajax = false;
 
@@ -27,13 +27,18 @@ class Request {
 	 */
 	public $method;
 
+	/*
+	 * Путь запроса без параметров
+	 */
+	public $request;
 
 	/*
 	 * Конструктор класса
 	 */
-	public function __construct($env)
+	public function __construct()
 	{
-		$this->setEnv($env);
+		$this->setEnv($_SERVER);
+		$this->request = parse_url($this->env['REQUEST_URI'])['path'];
 		$this->setMethod($this->env['REQUEST_METHOD']);
 		$this->checkAjax();
 	}

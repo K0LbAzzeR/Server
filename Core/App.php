@@ -30,7 +30,7 @@ class App {
 	/*
 	 * Конструктор класса
 	 */
-	public function __construct()
+	public function __construct(Request $request)
 	{
 
 	}

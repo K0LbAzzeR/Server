@@ -25,7 +25,7 @@ class Request {
 	/*
 	 * Метод запроса
 	 */
-	public $method;
+	private $method;
 
 	/*
 	 * Путь запроса без параметров
@@ -38,6 +38,7 @@ class Request {
 	public function __construct()
 	{
 		$this->setEnv($_SERVER);
+
 		$this->request = parse_url($this->env['REQUEST_URI'])['path'];
 		$this->setMethod($this->env['REQUEST_METHOD']);
 		$this->checkAjax();
@@ -65,6 +66,22 @@ class Request {
 	public function setEnv($env)
 	{
 		$this->env = $env;
+	}
+
+	/*
+	 * Установка параметров GET запроса
+	 */
+	public function setGet($get)
+	{
+
+	}
+
+	/*
+	 * Установка POST запроса
+	 */
+	public function setPost($post)
+	{
+
 	}
 
 	/*

@@ -25,8 +25,37 @@ class Response {
 	/*
 	 * Конструктор класса
 	 */
-	public function __construct(Handler $response)
+	public function __construct(Handler $handler)
 	{
 
 	}
+
+	/*
+	 * Запускаем ответ
+	 */
+	public function run()
+	{
+
+
+
+	}
+
+
+	/*
+	 * Устанавливаем заголовок HTTP ответа
+	 */
+	public function setHeader($header)
+	{
+		header($header);
+	}
+
+	/*
+	 * Устанавливаем код HTTP ответа
+	 */
+	public function setCode($code)
+	{
+		http_response_code($code);
+	}
+
+
 }

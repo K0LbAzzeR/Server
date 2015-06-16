@@ -26,9 +26,9 @@ $handler = new Armature\Core\Handler($request);
 $response = new Armature\Core\Response($handler);
 
 /*
- * Запускаем сервер
+ * Выводим ответ
  */
-$handler->run();
+$response->run();
 
 var_dump($request);
 var_dump($response);

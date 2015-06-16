@@ -11,9 +11,6 @@ define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
 define('HANDLERS_DIR', __DIR__ . '/Handlers');
 
-/*
- * Автозагрузчик
- */
 require CORE_DIR . '/Loader.php';
 $loader = new \Armature\Core\Loader;
 $loader->register();
@@ -25,9 +22,6 @@ $request = new Armature\Core\Request();
 $handler = new Armature\Core\Handler($request);
 $response = new Armature\Core\Response($handler);
 
-/*
- * Выводим ответ
- */
 $response->run();
 
 var_dump($request);

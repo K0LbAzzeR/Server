@@ -10,17 +10,12 @@
 namespace Armature\Core;
 
 
-class App {
+class Handler {
 
 	/*
 	 * Объект запроса
 	 */
 	public $request = null;
-
-	/*
-	 * Объект ответа
-	 */
-	public $response = null;
 
 	/*
 	 * Конфигурация
@@ -51,19 +46,6 @@ class App {
 		if(is_object($request))
 		{
 			$this->request = $request;
-			return true;
-		}
-		return false;
-	}
-
-	/*
-	 * Тело ответа
-	 */
-	public function setResponse($response)
-	{
-		if(is_object($response))
-		{
-			$this->response = $response;
 			return true;
 		}
 		return false;

@@ -22,14 +22,14 @@ $loader->addNamespace('Armature\Core', CORE_DIR);
 $loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
 
 $request = new Armature\Core\Request();
-$app = new Armature\Core\App($request);
-$response = new Armature\Core\Response($app);
+$handler = new Armature\Core\Handler($request);
+$response = new Armature\Core\Response($handler);
 
 /*
  * Запускаем сервер
  */
-$app->run();
+$handler->run();
 
 var_dump($request);
 var_dump($response);
-var_dump($app);
+var_dump($handler);

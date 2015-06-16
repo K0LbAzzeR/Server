@@ -25,7 +25,7 @@ class Response {
 	/*
 	 * Конструктор класса
 	 */
-	public function __construct(App $response)
+	public function __construct(Handler $response)
 	{
 
 	}

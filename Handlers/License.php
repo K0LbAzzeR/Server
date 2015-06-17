@@ -1,8 +1,10 @@
 <?php
 /**
- * User: Mofsy
- * Date: 16.06.2015
- * Time: 16:06
+ * Armature
+ *
+ * @link          https://github.com/Armature
+ * @author        Oleg Budrin <ru.mofsy@yandex.ru> https://mofsy.ru
+ * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
  */
 
 namespace Armature\Handlers;

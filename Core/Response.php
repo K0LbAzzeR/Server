@@ -75,7 +75,6 @@ class Response {
 	 */
 	public $body;
 
-
 	/*
 	 * Конструктор класса
 	 */

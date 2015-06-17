@@ -7,6 +7,11 @@
  * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
  */
 
+@error_reporting(E_ALL ^ E_WARNING ^ E_NOTICE);
+@ini_set('display_errors', true);
+@ini_set('html_errors', true);
+@ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
+
 define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
 define('HANDLERS_DIR', __DIR__ . '/Handlers');

@@ -8,3 +8,8 @@
  */
 
 
+return array(
+
+	'wefwef' => 2234234234
+
+);

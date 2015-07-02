@@ -31,5 +31,5 @@ $response = new Armature\Core\Response($handler);
 $response->run();
 
 var_dump($request);
-var_dump($response);
 var_dump($handler);
+var_dump($response);

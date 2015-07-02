@@ -15,6 +15,7 @@
 define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
 define('HANDLERS_DIR', __DIR__ . '/Handlers');
+define('CONFIGS_DIR', __DIR__ . '/Configs');
 
 require CORE_DIR . '/Loader.php';
 $loader = new \Armature\Core\Loader;

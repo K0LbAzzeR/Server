@@ -7,7 +7,6 @@
  * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
  */
 
-
 return array(
 
 	'secret_key' => 'wqwdwWQFQEWFwegfergerhERHTYKTYK56757567gJTJTYJ',

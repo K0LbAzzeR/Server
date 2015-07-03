@@ -22,8 +22,8 @@ $loader = new \Armature\Core\Loader;
 $loader->register();
 
 $loader->addNamespace('Armature\Core', CORE_DIR);
-
 $loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
+
 $config = new Armature\Core\Config(CONFIGS_DIR);
 $request = new Armature\Core\Request();
 $handler = new Armature\Core\Handler($request);

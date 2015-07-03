@@ -10,6 +10,8 @@
 
 return array(
 
-	'wefwef' => 2234234234
+	'secret_key' => 'wqwdwWQFQEWFwegfergerhERHTYKTYK56757567gJTJTYJ',
+
+	'client_id' => '1534534534534676887998034'
 
 );

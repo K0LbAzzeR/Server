@@ -56,16 +56,14 @@ class Config implements iConfig {
 	 */
 	public function load()
 	{
-		if( $handle = opendir( $this->getDir() ) )
+		$iterator = new \DirectoryIterator($this->getDir());
+
+		foreach ($iterator as $file)
 		{
-			while ( false !== ( $file = readdir( $handle ) ) )
+			if($file->isFile())
 			{
-				if ($file !== '.' && $file !== '..')
-				{
-					$this->global[$file] = include $this->getDir() . '/' . $file;
-				}
+				$this->global[$file->getBasename('.php')] = include $file->getPathname();
 			}
-			closedir( $handle );
 		}
 	}
 }

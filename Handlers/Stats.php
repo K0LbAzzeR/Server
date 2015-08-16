@@ -10,6 +10,12 @@
 namespace Armature\Handlers;
 
 
+interface iStats
+{
+    public function getStats();
+}
+
+
 class Stats {
 
 }

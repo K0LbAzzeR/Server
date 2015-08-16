@@ -27,6 +27,7 @@ interface iRequest
 	public function hasGet($key);
 	public function hasPost($key);
 	public function hasPort($port);
+	public function hasContentType($type);
 
 	public function getUserAgent();
 	public function getClientIp();
@@ -38,6 +39,7 @@ interface iRequest
 	public function getRequestUri();
 	public function getBaseURL();
 	public function getPort();
+	public function getContentType();
 
 	public function setBaseUrl($url);
 }
@@ -69,9 +71,19 @@ class Request {
 	private $method;
 
 	/*
+	 * Разрешенные методы
+	 */
+	private $method_allow = array('GET', 'POST', 'PUT', 'DELETE');
+
+	/*
 	 * Путь запроса без параметров
 	 */
 	public $request;
+
+	/*
+	 * Пусть
+	 */
+	public $path;
 
 	/*
 	 * Конструктор класса

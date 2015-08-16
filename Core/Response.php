@@ -93,7 +93,7 @@ class Response implements iResponse {
 	/*
 	 * Запускаем ответ
 	 */
-	public function run()
+	public function make()
 	{
 
 

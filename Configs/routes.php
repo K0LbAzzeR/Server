@@ -7,3 +7,10 @@
  * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
  */
 
+return array
+(
+    '/' => 'Main::index',
+
+    '/license' => '',
+
+);

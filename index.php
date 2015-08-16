@@ -28,12 +28,15 @@ $loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
 $timer = new Armature\Core\Timer(1);
 $config = new Armature\Core\Config();
 $request = new Armature\Core\Request();
+
 $handler = new Armature\Core\Handler($request);
+
 $response = new Armature\Core\Response($handler);
 
-$response->run();
+$response->make();
 
 echo $timer->get();
+
 var_dump($request);
 var_dump($handler);
 var_dump($response);

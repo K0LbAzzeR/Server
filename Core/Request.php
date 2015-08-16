@@ -26,13 +26,20 @@ interface iRequest
 	public function has($key);
 	public function hasGet($key);
 	public function hasPost($key);
+	public function hasPort($port);
 
 	public function getUserAgent();
+	public function getClientIp();
 	public function getHeaders();
 	public function getScheme();
 	public function getPut();
 	public function getPost();
 	public function getGet();
+	public function getRequestUri();
+	public function getBaseURL();
+	public function getPort();
+
+	public function setBaseUrl($url);
 }
 
 
@@ -142,5 +149,15 @@ class Request {
 	public function has($key)
 	{
 		return array_key_exists($key, $_REQUEST);
+	}
+
+	public function hasPost($key)
+	{
+		return array_key_exists($key, $_POST);
+	}
+
+	public function hasGet($key)
+	{
+		return array_key_exists($key, $_GET);
 	}
 }

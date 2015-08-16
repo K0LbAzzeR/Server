@@ -12,6 +12,8 @@ namespace Armature\Core;
 
 class Config {
 
+	private $global;
+
 	/*
 	 * Директория с конфигурациями
 	 */
@@ -22,9 +24,9 @@ class Config {
 	/*
 	 * Конструктор класса
 	 */
-	public function __construct($dir)
+	public function __construct()
 	{
-		$this->setDir($dir);
+		$this->setDir(CONFIGS_DIR);
 		$this->load();
 	}
 
@@ -55,10 +57,7 @@ class Config {
 			{
 				if ($file !== '.' && $file !== '..')
 				{
-					if (@file_exists($this->getDir() . "/{$file}"))
-					{
-						$this->global[$file] = include $this->getDir() . "/{$file}";
-					}
+					$this->global[$file] = include $this->getDir() . '/' . $file;
 				}
 			}
 			closedir( $handle );

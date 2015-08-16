@@ -12,6 +12,7 @@
 @ini_set('html_errors', true);
 @ini_set('error_reporting', E_ALL ^ E_WARNING ^ E_NOTICE);
 
+define('VERSION', '0.1.0');
 define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
 define('HANDLERS_DIR', __DIR__ . '/Handlers');
@@ -24,13 +25,15 @@ $loader->register();
 $loader->addNamespace('Armature\Core', CORE_DIR);
 $loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
 
-$config = new Armature\Core\Config(CONFIGS_DIR);
+$timer = new Armature\Core\Timer(1);
+$config = new Armature\Core\Config();
 $request = new Armature\Core\Request();
 $handler = new Armature\Core\Handler($request);
 $response = new Armature\Core\Response($handler);
 
 $response->run();
 
+echo $timer->get();
 var_dump($request);
 var_dump($handler);
 var_dump($response);

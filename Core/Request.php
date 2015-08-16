@@ -15,7 +15,7 @@ class Request {
 	/*
 	 * Переменные окружения
 	 */
-	public $env = array();
+	public $environ = array();
 
 	/*
 	 * Маркер Ajax
@@ -39,8 +39,8 @@ class Request {
 	{
 		$this->setEnv($_SERVER);
 
-		$this->request = parse_url($this->env['REQUEST_URI'])['path'];
-		$this->setMethod($this->env['REQUEST_METHOD']);
+		$this->request = parse_url($this->environ['REQUEST_URI'])['path'];
+		$this->setMethod($this->environ['REQUEST_METHOD']);
 		$this->checkAjax();
 	}
 
@@ -65,7 +65,7 @@ class Request {
 	 */
 	public function setEnv($env)
 	{
-		$this->env = $env;
+		$this->environ = $env;
 	}
 
 	/*
@@ -89,7 +89,7 @@ class Request {
 	 */
 	public function getEnv()
 	{
-		return $this->env;
+		return $this->environ;
 	}
 
 	/*
@@ -97,7 +97,7 @@ class Request {
 	 */
 	public function checkAjax()
 	{
-		if(isset($this->env['HTTP_X_REQUESTED_WITH']) && strtolower($this->env['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
+		if(isset($this->environ['HTTP_X_REQUESTED_WITH']) && strtolower($this->environ['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
 		{
 			$this->ajax = true;
 		}

@@ -10,12 +10,6 @@
 namespace Armature\Core;
 
 
-interface iDatabase
-{
-
-}
-
-
-class Database implements iDatabase {
+class Exception extends \Exception {
 
 }

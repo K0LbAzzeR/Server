@@ -10,7 +10,14 @@
 namespace Armature\Core;
 
 
-class Response {
+interface iResponse
+{
+	public function setCode($code);
+	public function setHeader($header);
+}
+
+
+class Response implements iResponse {
 
 	/**
 	 * @var array HTTP status codes

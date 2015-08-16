@@ -10,7 +10,13 @@
 namespace Armature\Core;
 
 
-class Handler {
+interface iHandler
+{
+
+}
+
+
+class Handler implements iHandler {
 
 	/*
 	 * Объект запроса

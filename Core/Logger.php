@@ -10,12 +10,11 @@
 namespace Armature\Core;
 
 
-interface iDatabase
+interface iLogger
 {
-
 }
 
 
-class Database implements iDatabase {
+class Logger implements iLogger{
 
 }

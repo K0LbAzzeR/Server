@@ -9,8 +9,15 @@
 
 namespace Armature\Core;
 
+interface iTimer
+{
+    public function start();
+    public function pauseStart();
+    public function pauseStop();
+    public function getTime();
+}
 
-class Timer {
+class Timer implements iTimer {
 
     private $start;
 
@@ -46,11 +53,10 @@ class Timer {
         return round(($this->getTime() - $this->start), $decimals);
     }
 
-    private function getTime()
+    public function getTime()
     {
         list($usec, $sec) = explode(' ', microtime());
 
         return ((float)$usec + (float)$sec);
     }
-
 }

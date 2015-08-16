@@ -10,6 +10,32 @@
 namespace Armature\Core;
 
 
+interface iRequest
+{
+	public function isPost();
+	public function isGet();
+	public function isPut();
+	public function isHead();
+	public function isDelete();
+	public function isSecure();
+	public function isOptions();
+	public function isPatch();
+	public function isAjax();
+	public function isMethod();
+
+	public function has($key);
+	public function hasGet($key);
+	public function hasPost($key);
+
+	public function getUserAgent();
+	public function getHeaders();
+	public function getScheme();
+	public function getPut();
+	public function getPost();
+	public function getGet();
+}
+
+
 class Request {
 
 	/*
@@ -24,6 +50,14 @@ class Request {
 
 	/*
 	 * Метод запроса
+	 *
+	 * GET
+	 * POST
+	 * HEAD
+	 * DELETE
+	 * PUT
+	 * PATCH
+	 * OPTIONS
 	 */
 	private $method;
 
@@ -41,7 +75,7 @@ class Request {
 
 		$this->request = parse_url($this->environ['REQUEST_URI'])['path'];
 		$this->setMethod($this->environ['REQUEST_METHOD']);
-		$this->checkAjax();
+		$this->isAjax();
 	}
 
 	/*
@@ -95,7 +129,7 @@ class Request {
 	/*
 	 * Проверка на аякс запрос
 	 */
-	public function checkAjax()
+	public function isAjax()
 	{
 		if(isset($this->environ['HTTP_X_REQUESTED_WITH']) && strtolower($this->environ['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
 		{
@@ -104,4 +138,9 @@ class Request {
 		return $this->ajax;
 	}
 
+
+	public function has($key)
+	{
+		return array_key_exists($key, $_REQUEST);
+	}
 }

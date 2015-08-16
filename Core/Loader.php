@@ -86,7 +86,8 @@ class Loader
 
 			// try to load a mapped file for the prefix and relative class
 			$mapped_file = $this->loadMappedFile($prefix, $relative_class);
-			if ($mapped_file) {
+			if ($mapped_file)
+			{
 				return $mapped_file;
 			}
 
@@ -143,7 +144,8 @@ class Loader
 	 */
 	protected function requireFile($file)
 	{
-		if (file_exists($file)) {
+		if (file_exists($file))
+		{
 			require $file;
 			return true;
 		}

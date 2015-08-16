@@ -12,6 +12,8 @@ namespace Armature\Core;
 
 interface iResponse
 {
+	public function make();
+
 	public function setCode($code);
 	public function setHeader($header);
 }
@@ -112,9 +114,19 @@ class Response implements iResponse {
 	/*
 	 * Устанавливаем код HTTP ответа
 	 */
-	public function setCode($code)
+	public function setCode($code = 200)
 	{
-		http_response_code($code);
+		if ($code !== 200)
+		{
+			$this->code = $code;
+
+			if (!function_exists('http_response_code'))
+			{
+				header( 'X-PHP-Response-Code: ' . $code, true, $code );
+			}
+			http_response_code($code);
+		}
+		return $code;
 	}
 
 

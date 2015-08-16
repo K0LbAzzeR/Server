@@ -7,14 +7,9 @@
  * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
  */
 
-return array
-(
-    '/' => 'Main::index',
+namespace Armature\Core;
 
-    '/license' => 'License::index',
 
-    '/method' => 'Method::index',
+class Router {
 
-    '/method.get/{id:[0-9]+}' => 'Method::get'
-
-);
+}

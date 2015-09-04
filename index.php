@@ -20,9 +20,9 @@ define('CONFIGS_DIR', __DIR__ . '/Configs');
 require CORE_DIR . '/Loader.php';
 
 (new Armature\Core\Loader())
-    ->register()
     ->addNamespace('Armature\Core', CORE_DIR)
-    ->addNamespace('Armature\Handlers', HANDLERS_DIR);
+    ->addNamespace('Armature\Handlers', HANDLERS_DIR)
+    ->register();
 
 (new Armature\Core\Main())
     ->listen();

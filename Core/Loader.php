@@ -26,7 +26,7 @@ class Loader
 	/**
 	 * Register loader with SPL autoloader stack.
 	 *
-	 * @return object
+	 * @return Loader
 	 */
 	public function register()
 	{
@@ -44,7 +44,7 @@ class Loader
 	 * @param bool $prepend If true, prepend the base directory to the stack
 	 * instead of appending it; this causes it to be searched first rather
 	 * than last.
-	 * @return object
+	 * @return Loader
 	 */
 	public function addNamespace($prefix, $base_dir, $prepend = false)
 	{

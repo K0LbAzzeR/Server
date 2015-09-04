@@ -10,19 +10,17 @@
   +----------------------------------------------------------------------+
 */
 
-define('DEV', true);
-define('VERSION', '0.1.0');
-define('ROOT_DIR', __DIR__);
-define('CORE_DIR', __DIR__ . '/Core');
-define('HANDLERS_DIR', __DIR__ . '/Handlers');
-define('CONFIGS_DIR', __DIR__ . '/Configs');
+namespace Armature\Core;
 
-require CORE_DIR . '/Loader.php';
+interface MainInterface
+{
+    public function listen();
+}
 
-(new Armature\Core\Loader())
-    ->register()
-    ->addNamespace('Armature\Core', CORE_DIR)
-    ->addNamespace('Armature\Handlers', HANDLERS_DIR);
+class Main implements MainInterface {
 
-(new Armature\Core\Main())
-    ->listen();
+    public function listen()
+    {
+
+    }
+}

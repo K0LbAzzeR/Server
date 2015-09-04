@@ -34,8 +34,6 @@ class Config implements iConfig {
 	 */
 	public function __construct()
 	{
-		$this->setDir(CONFIGS_DIR);
-		$this->load();
 	}
 
 	/*
@@ -44,6 +42,8 @@ class Config implements iConfig {
 	public function setDir($dir)
 	{
 		$this->dir = $dir;
+
+		return $this;
 	}
 
 	/*

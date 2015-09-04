@@ -26,11 +26,13 @@ class Loader
 	/**
 	 * Register loader with SPL autoloader stack.
 	 *
-	 * @return void
+	 * @return object
 	 */
 	public function register()
 	{
 		spl_autoload_register(array($this, 'loadClass'));
+
+        return $this;
 	}
 
 	/**
@@ -42,7 +44,7 @@ class Loader
 	 * @param bool $prepend If true, prepend the base directory to the stack
 	 * instead of appending it; this causes it to be searched first rather
 	 * than last.
-	 * @return void
+	 * @return object
 	 */
 	public function addNamespace($prefix, $base_dir, $prepend = false)
 	{
@@ -63,6 +65,8 @@ class Loader
 		} else {
 			array_push($this->prefixes[$prefix], $base_dir);
 		}
+
+		return $this;
 	}
 
 	/**

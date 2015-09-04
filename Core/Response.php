@@ -92,7 +92,7 @@ class Response {
 	/*
 	 * Конструктор класса
 	 */
-	public function __construct(Handler $handler)
+	public function __construct()
 	{
 
 	}

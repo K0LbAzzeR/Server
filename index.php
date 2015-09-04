@@ -22,19 +22,22 @@ define('HANDLERS_DIR', __DIR__ . '/Handlers');
 define('CONFIGS_DIR', __DIR__ . '/Configs');
 
 require CORE_DIR . '/Loader.php';
-$loader = new \Armature\Core\Loader;
-$loader->register();
 
-$loader->addNamespace('Armature\Core', CORE_DIR);
-$loader->addNamespace('Armature\Handlers', HANDLERS_DIR);
+$loader = (new Armature\Core\Loader())
+    ->register()
+    ->addNamespace('Armature\Core', CORE_DIR)
+    ->addNamespace('Armature\Handlers', HANDLERS_DIR);
 
 $timer = new Armature\Core\Timer(1);
-$config = new Armature\Core\Config();
+
+$config = (new Armature\Core\Config())
+    ->setDir(CONFIGS_DIR)
+    ->load();
+
 $request = new Armature\Core\Request();
+$response = new Armature\Core\Response();
 
 $handler = new Armature\Core\Handler($request);
-
-$response = new Armature\Core\Response($handler);
 
 $response->make();
 

@@ -68,5 +68,7 @@ class Config implements iConfig {
 				$this->global[$file->getBasename('.php')] = include $file->getPathname();
 			}
 		}
+
+        return $this;
 	}
 }

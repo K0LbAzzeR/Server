@@ -1,11 +1,14 @@
 <?php
-/**
- * Armature
- *
- * @link          https://github.com/Armature
- * @author        Oleg Budrin <ru.mofsy@yandex.ru> https://mofsy.ru
- * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
- */
+/*
+  +----------------------------------------------------------------------+
+  | Armature                                                             |
+  +----------------------------------------------------------------------+
+  | Website: http://armature.pw                                          |
+  | Github: https://github.com/Armature                                  |
+  +----------------------------------------------------------------------+
+  | Author: Oleg Budrin (Mofsy) <support@mofsy.ru> <https://mofsy.ru>    |
+  +----------------------------------------------------------------------+
+*/
 
 namespace Armature\Core;
 
@@ -13,13 +16,15 @@ namespace Armature\Core;
 interface iResponse
 {
 	public function make();
+	public function sendCode();
+	public function sendHeader();
 
 	public function setCode($code);
 	public function setHeader($header);
 }
 
 
-class Response implements iResponse {
+class Response {
 
 	/**
 	 * @var array HTTP status codes
@@ -98,8 +103,6 @@ class Response implements iResponse {
 	public function make()
 	{
 
-
-
 	}
 
 
@@ -126,6 +129,7 @@ class Response implements iResponse {
 			}
 			http_response_code($code);
 		}
+
 		return $code;
 	}
 

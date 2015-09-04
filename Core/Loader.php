@@ -1,11 +1,14 @@
 <?php
-/**
- * Armature
- *
- * @link          https://github.com/Armature
- * @author        Oleg Budrin <ru.mofsy@yandex.ru> https://mofsy.ru
- * @copyright     Copyright (c) 2015, Oleg Budrin (Mofsy)
- */
+/*
+  +----------------------------------------------------------------------+
+  | Armature                                                             |
+  +----------------------------------------------------------------------+
+  | Website: http://armature.pw                                          |
+  | Github: https://github.com/Armature                                  |
+  +----------------------------------------------------------------------+
+  | Author: Oleg Budrin (Mofsy) <support@mofsy.ru> <https://mofsy.ru>    |
+  +----------------------------------------------------------------------+
+*/
 
 namespace Armature\Core;
 
@@ -126,7 +129,8 @@ class Loader
 			        . '.php';
 
 			// if the mapped file exists, require it
-			if ($this->requireFile($file)) {
+			if ($this->requireFile($file))
+			{
 				// yes, we're done
 				return $file;
 			}

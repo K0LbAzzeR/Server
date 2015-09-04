@@ -55,9 +55,9 @@ foreach ($routeArray as $value) {
 
 }
 // вводим в адресную строку всякий бред, смотрим что нам показывают
-echo "<pre>";
+echo '<pre>';
 print_r($route);
-echo "</pre>";
+echo '</pre>';
 
 var_dump($request);
 var_dump($handler);

@@ -13,7 +13,7 @@
 namespace Armature\Core;
 
 
-interface iResponse
+interface ResponseInterface
 {
 	public function make();
 	public function sendCode();

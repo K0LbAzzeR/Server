@@ -13,12 +13,12 @@
 namespace Armature\Core;
 
 
-interface iDatabase
+interface DatabaseInterface
 {
 
 }
 
 
-class Database implements iDatabase {
+class Database implements DatabaseInterface {
 
 }

@@ -13,12 +13,12 @@
 namespace Armature\Core;
 
 
-interface iConfig
+interface ConfigInterface
 {
 	public function setDir($dir);
 }
 
-class Config implements iConfig {
+class Config implements ConfigInterface {
 
 	private $global;
 

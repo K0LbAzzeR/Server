@@ -13,7 +13,7 @@
 namespace Armature\Core;
 
 
-interface iRequest
+interface RequestInterface
 {
 	public function isPost();
 	public function isGet();

@@ -12,7 +12,7 @@
 
 namespace Armature\Core;
 
-interface iTimer
+interface TimerInterface
 {
     public function start();
     public function pauseStart();
@@ -20,7 +20,7 @@ interface iTimer
     public function getTime();
 }
 
-class Timer implements iTimer {
+class Timer implements TimerInterface {
 
     private $start;
 

@@ -13,12 +13,12 @@
 namespace Armature\Core;
 
 
-interface iLogger
+interface LoggerInterface
 {
 }
 
 
-class Logger implements iLogger {
+class Logger implements LoggerInterface {
 
     const INFO = 'Information';
 

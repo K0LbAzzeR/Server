@@ -10,6 +10,7 @@
   +----------------------------------------------------------------------+
 */
 
+define('DEV', true);
 define('VERSION', '0.1.0');
 define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
@@ -23,7 +24,10 @@ $loader = (new Armature\Core\Loader())
     ->addNamespace('Armature\Core', CORE_DIR)
     ->addNamespace('Armature\Handlers', HANDLERS_DIR);
 
-$timer = new Armature\Core\Timer(1);
+if(DEV === true)
+{
+    $timer = new Armature\Core\Timer(1);
+}
 
 $config = (new Armature\Core\Config())
     ->setDir(CONFIGS_DIR)
@@ -36,4 +40,7 @@ $handler = new Armature\Core\Handler($request);
 
 $response->make();
 
-echo $timer->get();
+if(DEV === true)
+{
+    echo $timer->get();
+}

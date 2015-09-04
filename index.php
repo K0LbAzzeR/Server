@@ -10,7 +10,7 @@
   +----------------------------------------------------------------------+
 */
 
-define('DEV', true);
+define('DEBUG', true);
 define('VERSION', '0.1.0');
 define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');

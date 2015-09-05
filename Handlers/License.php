@@ -14,7 +14,10 @@
 namespace Armature\Handlers;
 
 
-class License {
+use Armature\Core\Handler;
+
+
+class License extends Handler {
 
 	public function create()
 	{

@@ -14,7 +14,10 @@
 namespace Armature\Handlers;
 
 
-class Method {
+use Armature\Core\Handler;
+
+
+class Method extends Handler {
 
 	public function create()
 	{

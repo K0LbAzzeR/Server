@@ -14,6 +14,9 @@
 namespace Armature\Handlers;
 
 
-class Users {
+use Armature\Core\Handler;
+
+
+class Users extends Handler {
 
 }

@@ -20,7 +20,7 @@ interface HandlerInterface
 }
 
 
-class Handler implements HandlerInterface {
+abstract class Handler implements HandlerInterface {
 
 	/*
 	 * Объект запроса

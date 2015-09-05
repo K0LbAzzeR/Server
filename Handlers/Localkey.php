@@ -14,6 +14,9 @@
 namespace Armature\Handlers;
 
 
-class Localkey {
+use Armature\Core\Handler;
+
+
+class Localkey extends Handler {
 
 }

@@ -14,12 +14,15 @@
 namespace Armature\Handlers;
 
 
+use Armature\Core\Handler;
+
+
 interface iStats
 {
     public function getStats();
 }
 
 
-class Stats {
+class Stats extends Handler {
 
 }

@@ -14,7 +14,10 @@
 namespace Armature\Handlers;
 
 
-class Main {
+use Armature\Core\Handler;
+
+
+class Main extends Handler {
 
     public function index()
     {

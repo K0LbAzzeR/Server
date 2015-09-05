@@ -5,6 +5,7 @@
   +----------------------------------------------------------------------+
   | Website: http://armature.pw                                          |
   | Github: https://github.com/Armature                                  |
+  | License: http://creativecommons.org/licenses/by-nc-sa/4.0/           |
   +----------------------------------------------------------------------+
   | Author: Oleg Budrin (Mofsy) <support@mofsy.ru> <https://mofsy.ru>    |
   +----------------------------------------------------------------------+
@@ -16,6 +17,7 @@ define('ROOT_DIR', __DIR__);
 define('CORE_DIR', __DIR__ . '/Core');
 define('HANDLERS_DIR', __DIR__ . '/Handlers');
 define('CONFIGS_DIR', __DIR__ . '/Configs');
+
 
 require CORE_DIR . '/Loader.php';
 

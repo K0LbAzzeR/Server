@@ -13,6 +13,8 @@
 
 return array(
 
+    'version' => '1',
+
 	'secret_key' => 'wqwdwWQFQEWFwegfergerhERHTYKTYK56757567gJTJTYJ',
 
 	'client_id' => '1534534534534676887998034'

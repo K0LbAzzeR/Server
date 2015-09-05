@@ -1,5 +1,9 @@
-# Server
-Armature server
+# Armature Server
+Сервер для выдачи разрешений на использование ПО, написанных на различных языках, поддерживающих работу с API через HTTP.
+
+### Системные требования
+* MySQL 5.1 или новее
+* PHP 5.4 или новее
 
 
 ## Лицензия Creative Commons «Attribution-NonCommercial-ShareAlike»

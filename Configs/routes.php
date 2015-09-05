@@ -20,5 +20,4 @@ return array
     '/method' => 'Method::index',
 
     '/method.get/{id:[0-9]+}' => 'Method::get'
-
 );

@@ -11,6 +11,9 @@
   +----------------------------------------------------------------------+
 */
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+
 define('DEBUG', true);
 define('VERSION', '0.1.0');
 define('ROOT_DIR', __DIR__);

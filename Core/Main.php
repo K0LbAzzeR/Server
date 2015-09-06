@@ -12,13 +12,9 @@
 
 namespace Armature\Core;
 
-interface MainInterface
-{
-    public function loadConfig();
-    public function loadRouter();
 
-    public function listen();
-}
+use Armature\Handlers;
+
 
 class Main implements MainInterface {
 
@@ -26,20 +22,20 @@ class Main implements MainInterface {
 
     private $router;
 
-    public function __construct()
-    {
-        $this->loadConfig();
-        $this->loadRouter();
-    }
+    public function __construct() {}
 
     public function loadConfig()
     {
         $this->config = (new Config())->setDir(CONFIGS_DIR)->load();
+
+        return $this;
     }
 
     public function loadRouter()
     {
         $this->router = new Router();
+
+        return $this;
     }
 
     public function listen()

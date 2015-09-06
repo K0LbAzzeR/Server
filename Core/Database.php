@@ -14,12 +14,6 @@
 namespace Armature\Core;
 
 
-interface DatabaseInterface
-{
-
-}
-
-
-class Database implements DatabaseInterface {
+class Database {
 
 }

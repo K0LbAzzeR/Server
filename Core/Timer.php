@@ -13,13 +13,6 @@
 
 namespace Armature\Core;
 
-interface TimerInterface
-{
-    public function start();
-    public function pauseStart();
-    public function pauseStop();
-    public function getTime();
-}
 
 class Timer implements TimerInterface {
 

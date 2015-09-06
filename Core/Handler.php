@@ -14,12 +14,6 @@
 namespace Armature\Core;
 
 
-interface HandlerInterface
-{
-
-}
-
-
 abstract class Handler implements HandlerInterface {
 
 	/*

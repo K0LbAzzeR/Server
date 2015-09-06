@@ -5,27 +5,17 @@
   +----------------------------------------------------------------------+
   | Website: http://armature.pw                                          |
   | Github: https://github.com/Armature                                  |
-  | License: http://creativecommons.org/licenses/by-nc-sa/4.0/           |
   +----------------------------------------------------------------------+
   | Author: Oleg Budrin (Mofsy) <support@mofsy.ru> <https://mofsy.ru>    |
   +----------------------------------------------------------------------+
 */
 
-namespace Armature\Handlers;
+namespace Armature\Core;
 
-
-use Armature\Core\Handler as Handler;
-
-
-class Main extends Handler {
-
-    public function index()
-    {
-        $this->hello();
-    }
-
-    private function hello()
-    {
-        echo 'Hello World by Armature.Server';
-    }
+interface TimerInterface
+{
+    public function start();
+    public function pauseStart();
+    public function pauseStop();
+    public function getTime();
 }

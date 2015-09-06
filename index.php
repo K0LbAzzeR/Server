@@ -26,8 +26,11 @@ require CORE_DIR . '/Loader.php';
 
 (new Armature\Core\Loader())
     ->addNamespace('Armature\Core', CORE_DIR)
+    ->addNamespace('Armature\Core\Http', CORE_DIR . '/Http')
     ->addNamespace('Armature\Handlers', HANDLERS_DIR)
     ->register();
 
 (new Armature\Core\Main())
+    ->loadConfig()
+    ->loadRouter()
     ->listen();

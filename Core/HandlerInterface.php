@@ -11,21 +11,9 @@
   +----------------------------------------------------------------------+
 */
 
-namespace Armature\Handlers;
+namespace Armature\Core;
 
 
-use Armature\Core\Handler as Handler;
+interface HandlerInterface {
 
-
-class Main extends Handler {
-
-    public function index()
-    {
-        $this->hello();
-    }
-
-    private function hello()
-    {
-        echo 'Hello World by Armature.Server';
-    }
 }

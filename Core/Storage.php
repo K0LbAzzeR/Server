@@ -11,12 +11,9 @@
   +----------------------------------------------------------------------+
 */
 
-return array(
+namespace Armature\Core;
 
-    'version' => '1.0.0.0',
 
-	'secret_key' => 'wqwdwWQFQEWFwegfergerhERHTYKTYK56757567gJTJTYJ',
+class Storage {
 
-	'client_id' => '1534534534534676887998034'
-
-);
+}

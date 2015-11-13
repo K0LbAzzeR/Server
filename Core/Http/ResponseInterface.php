@@ -11,24 +11,15 @@
   +----------------------------------------------------------------------+
 */
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
+namespace Armature\Core;
 
-define('DEBUG', true);
-define('VERSION', '0.1.0');
-define('ROOT_DIR', __DIR__);
-define('CORE_DIR', __DIR__ . '/Core');
-define('HANDLERS_DIR', __DIR__ . '/Handlers');
-define('CONFIGS_DIR', __DIR__ . '/Configs');
-define('STORAGE_DIR', __DIR__ . '/Storage');
 
-require CORE_DIR . '/Loader.php';
+interface ResponseInterface
+{
+    public function make();
+    public function sendCode();
+    public function sendHeader();
 
-(new Armature\Core\Loader())
-    ->addNamespace('Armature', ROOT_DIR)
-    ->register();
-
-(new Armature\Core\Main())
-    ->loadConfig()
-    ->loadRouter()
-    ->listen();
+    public function setCode($code);
+    public function setHeader($header);
+}

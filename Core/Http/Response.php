@@ -14,17 +14,6 @@
 namespace Armature\Core;
 
 
-interface ResponseInterface
-{
-	public function make();
-	public function sendCode();
-	public function sendHeader();
-
-	public function setCode($code);
-	public function setHeader($header);
-}
-
-
 class Response {
 
 	/**
